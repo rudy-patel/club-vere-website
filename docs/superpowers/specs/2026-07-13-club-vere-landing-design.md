@@ -67,7 +67,7 @@ Images must avoid logos, legible text, watermarks, exaggerated influencer stylin
 
 ## Technical architecture
 
-- Next.js 16.2.10 with React 19.2.7 and TypeScript.
+- Next.js 16.2.10 with React 19.2.7 and TypeScript 6.0.3.
 - Tailwind CSS 4 for build-time utilities plus scoped concept CSS for the expressive art direction.
 - Server-rendered page shell and templates where possible.
 - One small client component owns the design preference and transition state.
@@ -94,4 +94,3 @@ The page includes a descriptive title, summary, canonical metadata, Open Graph f
 - `npm run lint`, `npm run test`, and `npm run build` pass.
 - Browser checks cover 375x812, 768x1024, 1440x1000, keyboard switching, reduced motion, and both system color modes.
 - Production deployment is inspected after publishing.
-

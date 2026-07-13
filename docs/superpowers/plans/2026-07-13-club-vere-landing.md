@@ -6,7 +6,7 @@
 
 **Architecture:** A static Next.js App Router page owns a shared content model and delegates rendering to three focused concept components. A small client-side `DesignSwitcher` chooses the active concept, persists the preference, and leaves all content and external destinations centralized.
 
-**Tech Stack:** Next.js 16.2.10, React 19.2.7, TypeScript 7.0.2, Tailwind CSS 4.3.2, Vitest 4.1.10, Testing Library, Vercel, GitHub.
+**Tech Stack:** Next.js 16.2.10, React 19.2.7, TypeScript 6.0.3, Tailwind CSS 4.3.2, Vitest 4.1.10, Testing Library, Vercel, GitHub.
 
 ## Global Constraints
 
@@ -118,4 +118,3 @@
 - [ ] Link or create the Vercel project explicitly and deploy production.
 - [ ] Inspect the deployment, request the production URL, and confirm a successful HTTP response.
 - [ ] Report repository URL, production URL, checks, and any remaining limitation.
-
