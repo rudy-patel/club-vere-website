@@ -2,8 +2,10 @@
 
 import { useEffect, useState } from "react";
 
+import { BlueHour } from "@/components/blue-hour";
 import { DesignSwitcher } from "@/components/design-switcher";
-import { PicnicPop } from "@/components/picnic-pop";
+import { InviteClub } from "@/components/invite-club";
+import { NeonSignal } from "@/components/neon-signal";
 import { SoftFocus } from "@/components/soft-focus";
 import { VereAfterDark } from "@/components/vere-after-dark";
 import { clubVereContent } from "@/lib/content";
@@ -14,7 +16,9 @@ const STORAGE_KEY = "club-vere-design";
 const designs = {
   "soft-focus": SoftFocus,
   "vere-after-dark": VereAfterDark,
-  "picnic-pop": PicnicPop,
+  "blue-hour": BlueHour,
+  "invite-club": InviteClub,
+  "neon-signal": NeonSignal,
 } satisfies Record<DesignId, typeof SoftFocus>;
 
 export function DesignShell() {

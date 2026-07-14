@@ -2,7 +2,9 @@ import { cleanup, render, screen } from "@testing-library/react";
 import type { ComponentType } from "react";
 import { afterEach, describe, expect, it } from "vitest";
 
-import { PicnicPop } from "@/components/picnic-pop";
+import { BlueHour } from "@/components/blue-hour";
+import { InviteClub } from "@/components/invite-club";
+import { NeonSignal } from "@/components/neon-signal";
 import { SoftFocus } from "@/components/soft-focus";
 import { VereAfterDark } from "@/components/vere-after-dark";
 import { clubVereContent, type ClubVereContent } from "@/lib/content";
@@ -12,7 +14,9 @@ afterEach(cleanup);
 const designs: Array<[string, ComponentType<{ content: ClubVereContent }>]> = [
   ["Soft Focus", SoftFocus],
   ["Vere After Dark", VereAfterDark],
-  ["Picnic Pop", PicnicPop],
+  ["Blue Hour", BlueHour],
+  ["Invite Club", InviteClub],
+  ["Neon Signal", NeonSignal],
 ];
 
 describe.each(designs)("%s landing page", (_name, Design) => {
