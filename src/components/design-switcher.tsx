@@ -9,7 +9,9 @@ const options: ReadonlyArray<{
 }> = [
   { id: "soft-focus", number: "01", label: "Soft Focus" },
   { id: "vere-after-dark", number: "02", label: "After Dark" },
-  { id: "picnic-pop", number: "03", label: "Picnic Pop" },
+  { id: "blue-hour", number: "03", label: "Blue Hour" },
+  { id: "invite-club", number: "04", label: "Invite" },
+  { id: "neon-signal", number: "05", label: "Neon" },
 ];
 
 interface DesignSwitcherProps {

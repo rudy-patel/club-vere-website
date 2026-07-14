@@ -19,9 +19,9 @@ describe("DesignSwitcher", () => {
       "true",
     );
 
-    fireEvent.click(screen.getByRole("button", { name: /picnic pop/i }));
+    fireEvent.click(screen.getByRole("button", { name: /blue hour/i }));
 
-    expect(onDesignChange).toHaveBeenCalledWith("picnic-pop");
+    expect(onDesignChange).toHaveBeenCalledWith("blue-hour");
   });
 
   it("labels the control for design comparison", () => {

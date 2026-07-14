@@ -20,7 +20,9 @@ describe("design selection", () => {
   });
 
   it("restores a valid persisted design", () => {
-    expect(getInitialDesign("picnic-pop")).toBe("picnic-pop");
+    expect(getInitialDesign("blue-hour")).toBe("blue-hour");
+    expect(getInitialDesign("invite-club")).toBe("invite-club");
+    expect(getInitialDesign("neon-signal")).toBe("neon-signal");
   });
 });
 
