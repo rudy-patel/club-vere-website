@@ -659,20 +659,12 @@ button:focus-visible {
 .ad-hero {
   display: grid;
   min-height: calc(100dvh - 9rem);
-  align-items: center;
-  gap: 1.5rem;
-  grid-template-columns: 1.25fr 0.9fr 0.35fr;
-  padding-block: 2rem 3rem;
+  gap: clamp(2rem, 6vw, 6rem);
+  grid-template-columns: minmax(18rem, 0.78fr) minmax(0, 1.22fr);
+  padding-block: clamp(2rem, 4vw, 4rem);
 }
 
-.ad-hero__headline {
-  position: relative;
-  z-index: 3;
-}
-
-.ad-hero__headline > p,
 .ad-manifesto > p,
-.ad-formats__title > p,
 .ad-final > p {
   margin: 0 0 1rem;
   color: var(--ad-acid);
@@ -681,40 +673,100 @@ button:focus-visible {
   letter-spacing: 0.13em;
 }
 
-.ad-hero h1 {
-  width: 10.4ch;
+.ad-hero__brand {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+  justify-content: center;
   margin: 0;
+  border-right: 1px solid rgb(237 241 232 / 0.25);
   color: var(--ad-pink);
-  font-size: clamp(5.2rem, 9vw, 10rem);
+  font-size: clamp(7rem, 13.5vw, 13.5rem);
   font-weight: 800;
-  letter-spacing: -0.055em;
-  line-height: 0.76;
+  letter-spacing: -0.065em;
+  line-height: 0.7;
+  padding-right: clamp(1.5rem, 4vw, 4rem);
 }
 
-.ad-hero h1 span {
+.ad-hero__brand span {
   display: block;
+}
+
+.ad-hero__brand span:last-child {
   color: var(--ad-acid);
 }
 
-.ad-hero__image {
-  position: relative;
-  min-height: min(68vh, 43rem);
-  margin: 0 0 0 -8vw;
-  clip-path: polygon(8% 0, 100% 5%, 93% 100%, 0 93%);
-  filter: saturate(0.82) contrast(1.04);
+.ad-hero__content {
+  display: grid;
+  align-content: center;
 }
 
-.ad-hero__aside {
-  align-self: end;
-  margin-bottom: 2rem;
+.ad-hero__content > h2 {
+  max-width: 14ch;
+  margin: 0;
+  color: var(--ad-acid);
+  font-size: clamp(4.2rem, 6vw, 7rem);
+  font-weight: 800;
+  letter-spacing: -0.055em;
+  line-height: 0.78;
+  text-wrap: balance;
 }
 
-.ad-hero__aside p {
-  margin: 0 0 1.4rem;
+.ad-hero__intro {
+  display: grid;
+  align-items: center;
+  gap: 1.5rem;
+  grid-template-columns: minmax(0, 1fr) auto;
+  margin-top: clamp(1.5rem, 3vw, 2.5rem);
+  border-top: 1px solid rgb(237 241 232 / 0.25);
+  padding-block: 1.25rem;
+}
+
+.ad-hero__intro p,
+.ad-hero__formats p {
+  margin: 0;
   font-family: var(--font-manrope), sans-serif;
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   line-height: 1.55;
   text-transform: none;
+}
+
+.ad-hero__intro p {
+  max-width: 34rem;
+}
+
+.ad-hero__formats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1px solid rgb(237 241 232 / 0.25);
+}
+
+.ad-hero__formats article {
+  min-width: 0;
+  border-bottom: 1px solid rgb(237 241 232 / 0.25);
+  padding-block: clamp(1rem, 2vw, 1.5rem);
+}
+
+.ad-hero__formats article:nth-child(odd) {
+  padding-right: clamp(1rem, 2.5vw, 2rem);
+}
+
+.ad-hero__formats article:nth-child(even) {
+  border-left: 1px solid rgb(237 241 232 / 0.25);
+  padding-left: clamp(1rem, 2.5vw, 2rem);
+}
+
+.ad-hero__formats h3 {
+  margin: 0 0 0.55rem;
+  color: var(--ad-pink);
+  font-size: clamp(2rem, 3vw, 3.4rem);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 0.88;
+}
+
+.ad-hero__formats p {
+  max-width: 24rem;
 }
 
 .ad-button {
@@ -839,54 +891,6 @@ button:focus-visible {
   color: var(--ad-acid);
 }
 
-.ad-formats {
-  display: grid;
-  gap: clamp(3rem, 8vw, 8rem);
-  grid-template-columns: 0.8fr 1.2fr;
-  padding-block: clamp(7rem, 11vw, 11rem);
-}
-
-.ad-formats__title {
-  position: sticky;
-  top: 7rem;
-  align-self: start;
-}
-
-.ad-formats__title h2 {
-  max-width: 9ch;
-  margin: 0;
-  font-size: clamp(3.5rem, 6vw, 6.8rem);
-  font-weight: 700;
-  letter-spacing: -0.045em;
-  line-height: 0.82;
-}
-
-.ad-formats__list article {
-  display: grid;
-  align-items: baseline;
-  border-bottom: 1px solid rgb(237 241 232 / 0.25);
-  gap: 1rem;
-  grid-template-columns: 0.9fr 1.1fr;
-  padding-block: 2rem;
-}
-
-.ad-formats__list h3 {
-  margin: 0;
-  color: var(--ad-pink);
-  font-size: clamp(2.5rem, 4vw, 4.8rem);
-  font-weight: 700;
-  line-height: 0.9;
-}
-
-.ad-formats__list p {
-  max-width: 24rem;
-  margin: 0;
-  font-family: var(--font-manrope), sans-serif;
-  font-size: 0.82rem;
-  line-height: 1.6;
-  text-transform: none;
-}
-
 .ad-community {
   display: grid;
   align-items: stretch;
@@ -1009,21 +1013,30 @@ button:focus-visible {
 
   
 .ad-hero {
-    grid-template-columns: 1.05fr 0.95fr;
+    min-height: auto;
+    gap: 2.5rem;
+    grid-template-columns: 1fr;
+    padding-block: 3rem;
   }
 
   
-.ad-hero__aside {
-    grid-column: 1 / -1;
+.ad-hero__brand {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
+    min-height: auto;
+    flex-direction: row;
+    gap: 0.14em;
+    justify-content: flex-start;
     margin: 0;
+    border-right: 0;
+    border-bottom: 1px solid rgb(237 241 232 / 0.25);
+    font-size: clamp(6.5rem, 18vw, 10rem);
+    padding: 0 0 2.5rem;
   }
 
   
-.ad-hero__aside p { max-width: 32rem; margin: 0; }
+.ad-hero__content > h2 {
+    max-width: 12ch;
+  }
 
   
 .ad-manifesto {
@@ -1217,39 +1230,38 @@ button:focus-visible {
 
   
 .ad-hero {
-    min-height: calc(100dvh - 8.2rem);
-    align-content: center;
-    grid-template-columns: 1fr;
-    padding-block: 1rem 2rem;
+    gap: 2rem;
+    padding-block: 2rem 2.5rem;
   }
 
   
-.ad-hero h1 {
-    width: auto;
-    max-width: 8.6ch;
-    font-size: clamp(4.8rem, 23vw, 7.2rem);
+.ad-hero__brand {
+    font-size: clamp(4.6rem, 22vw, 7rem);
+    padding-bottom: 1.75rem;
   }
 
   
-.ad-hero__image {
-    min-height: 31vh;
-    margin: -0.5rem 0 0 9%;
+.ad-hero__content > h2 {
+    max-width: 11ch;
+    font-size: clamp(3.4rem, 15vw, 5.3rem);
   }
 
   
-.ad-hero__aside {
+.ad-hero__intro {
     display: grid;
-    grid-template-columns: 1fr auto;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+    margin-top: 1.5rem;
   }
 
   
-.ad-hero__aside p { font-size: 0.72rem; }
+.ad-hero__intro p,
+.ad-hero__formats p { font-size: 0.76rem; }
   
 .ad-ticker { font-size: 2.8rem; }
 
   
-.ad-manifesto,
-.ad-formats {
+.ad-manifesto {
     min-height: auto;
     gap: 2.5rem;
     grid-template-columns: 1fr;
@@ -1260,11 +1272,8 @@ button:focus-visible {
 .ad-manifesto > div { grid-column: auto; }
   
 .ad-manifesto h2,
-.ad-formats__title h2,
 .ad-community h2,
 .ad-final h2 { font-size: clamp(4rem, 18vw, 6rem); }
-  
-.ad-formats__title { position: static; }
 
   
 .ad-event,
@@ -1279,11 +1288,6 @@ button:focus-visible {
 .ad-event__poster { padding: 3rem 1.4rem; }
   
 .ad-event__poster h2 { font-size: 4.7rem; }
-
-  
-.ad-formats__list article {
-    grid-template-columns: 1fr;
-  }
 
   
 .ad-community > div { min-height: 29rem; padding: 2rem 1.4rem; }
@@ -1322,7 +1326,23 @@ button:focus-visible {
 
   .sf-hero h1 { font-size: clamp(3.25rem, 17vw, 4.3rem); }
 
-  .ad-hero h1 { font-size: clamp(4.2rem, 22vw, 6rem); }
+  .ad-hero__brand {
+    font-size: clamp(4.2rem, 21vw, 5.5rem);
+  }
+
+  .ad-hero__content > h2 {
+    font-size: clamp(3.15rem, 15vw, 4rem);
+  }
+
+  .ad-hero__formats {
+    grid-template-columns: 1fr;
+  }
+
+  .ad-hero__formats article:nth-child(odd),
+  .ad-hero__formats article:nth-child(even) {
+    border-left: 0;
+    padding-inline: 0;
+  }
 
   .sf-button,
   .ad-button { min-height: 2.85rem; }

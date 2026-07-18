@@ -22,28 +22,26 @@ export function VereAfterDark({ content }: VereAfterDarkProps) {
       </header>
 
       <section className="ad-hero page-shell" id="top">
-        <div className="ad-hero__headline reveal-item">
-          <p>VANCOUVER, GET OUT.</p>
-          <h1>
-            NO FUN CITY?
-            <span>NOT ON OUR WATCH.</span>
-          </h1>
-        </div>
-        <figure className="ad-hero__image reveal-item">
-          <Image
-            alt={content.images.park.alt}
-            className="cover-image"
-            fill
-            preload
-            sizes="(max-width: 767px) 92vw, 41vw"
-            src={content.images.park.src}
-          />
-        </figure>
-        <div className="ad-hero__aside">
-          <p>{content.heroBody}</p>
-          <SiteLink className="ad-button" href={content.instagramUrl}>
-            See what&apos;s next
-          </SiteLink>
+        <h1 aria-label="Club Vere" className="ad-hero__brand reveal-item">
+          <span>CLUB</span>
+          <span>VERE</span>
+        </h1>
+        <div className="ad-hero__content reveal-item">
+          <h2>{content.formatsTitle}</h2>
+          <div className="ad-hero__intro">
+            <p>{content.heroBody}</p>
+            <SiteLink className="ad-button" href={content.instagramUrl}>
+              See what&apos;s next
+            </SiteLink>
+          </div>
+          <div className="ad-hero__formats">
+            {content.formats.map((format) => (
+              <article key={format.title}>
+                <h3>{format.title}</h3>
+                <p>{format.description}</p>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -83,20 +81,6 @@ export function VereAfterDark({ content }: VereAfterDarkProps) {
           <SiteLink className="ad-link" href={content.eventbriteUrl}>
             View the past event
           </SiteLink>
-        </div>
-      </section>
-
-      <section className="ad-formats page-shell">
-        <div className="ad-formats__title">
-          <h2>{content.formatsTitle}</h2>
-        </div>
-        <div className="ad-formats__list">
-          {content.formats.map((format) => (
-            <article key={format.title}>
-              <h3>{format.title}</h3>
-              <p>{format.description}</p>
-            </article>
-          ))}
         </div>
       </section>
 
