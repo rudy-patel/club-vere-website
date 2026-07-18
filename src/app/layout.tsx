@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import {
   Barlow_Condensed,
   Cormorant_Garamond,
+  DM_Sans,
   Manrope,
   Space_Grotesk,
 } from "next/font/google";
@@ -33,6 +34,13 @@ const gallery = Space_Grotesk({
   display: "swap",
   subsets: ["latin"],
   variable: "--font-gallery",
+  weight: ["400", "500", "600", "700"],
+});
+
+const brandSans = DM_Sans({
+  display: "swap",
+  subsets: ["latin"],
+  variable: "--font-brand-sans",
   weight: ["400", "500", "600", "700"],
 });
 
@@ -86,7 +94,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en">
       <body
-        className={`${manrope.variable} ${editorial.variable} ${condensed.variable} ${gallery.variable}`}
+        className={`${manrope.variable} ${editorial.variable} ${condensed.variable} ${gallery.variable} ${brandSans.variable}`}
       >
         <a className="skip-link" href="#main-content">
           Skip to content

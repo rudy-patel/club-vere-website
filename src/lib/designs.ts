@@ -3,6 +3,7 @@ export const DESIGN_IDS = [
   "vere-after-dark",
   "blue-hour",
   "invite-club",
+  "the-vere-edit",
 ] as const;
 
 export type DesignId = (typeof DESIGN_IDS)[number];
