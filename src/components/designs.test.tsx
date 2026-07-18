@@ -4,7 +4,6 @@ import { afterEach, describe, expect, it } from "vitest";
 
 import { BlueHour } from "@/components/blue-hour";
 import { InviteClub } from "@/components/invite-club";
-import { NeonSignal } from "@/components/neon-signal";
 import { SoftFocus } from "@/components/soft-focus";
 import { VereAfterDark } from "@/components/vere-after-dark";
 import { clubVereContent, type ClubVereContent } from "@/lib/content";
@@ -16,7 +15,6 @@ const designs: Array<[string, ComponentType<{ content: ClubVereContent }>]> = [
   ["Vere After Dark", VereAfterDark],
   ["Blue Hour", BlueHour],
   ["Invite Club", InviteClub],
-  ["Neon Signal", NeonSignal],
 ];
 
 describe.each(designs)("%s landing page", (_name, Design) => {

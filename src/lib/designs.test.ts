@@ -11,6 +11,7 @@ describe("design selection", () => {
 
   it("rejects unknown persisted values", () => {
     expect(isDesignId("gradient-slop")).toBe(false);
+    expect(isDesignId("neon-signal")).toBe(false);
     expect(isDesignId(null)).toBe(false);
   });
 
@@ -22,7 +23,5 @@ describe("design selection", () => {
   it("restores a valid persisted design", () => {
     expect(getInitialDesign("blue-hour")).toBe("blue-hour");
     expect(getInitialDesign("invite-club")).toBe("invite-club");
-    expect(getInitialDesign("neon-signal")).toBe("neon-signal");
   });
 });
-
