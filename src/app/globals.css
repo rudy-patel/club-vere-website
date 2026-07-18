@@ -591,6 +591,7 @@ button:focus-visible {
 .sf-final {
   display: grid;
   min-height: 42rem;
+  align-content: center;
   place-items: center;
   border-radius: 2rem 2rem 0 0;
   background:
@@ -598,11 +599,13 @@ button:focus-visible {
     radial-gradient(circle at 80% 70%, var(--sf-lime), transparent 40%),
     #d8b2c6;
   padding: 5rem 1rem;
+  row-gap: 1.5rem;
   text-align: center;
 }
 
 .sf-final h2 {
   max-width: 12ch;
+  margin-bottom: 1rem;
   font-size: clamp(3.6rem, 7vw, 7rem);
   line-height: 0.9;
 }
