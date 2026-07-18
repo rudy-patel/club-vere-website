@@ -33,3 +33,30 @@ describe.each(designs)("%s landing page", (_name, Design) => {
     ).toHaveAttribute("href", clubVereContent.eventbriteUrl);
   });
 });
+
+describe("Vere After Dark hero", () => {
+  it("introduces Club Vere through the event formats without a duplicate formats section", () => {
+    const { container } = render(
+      <VereAfterDark content={clubVereContent} />,
+    );
+
+    expect(
+      screen.getByRole("heading", { level: 1, name: /club vere/i }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("heading", {
+        level: 2,
+        name: clubVereContent.formatsTitle,
+      }),
+    ).toBeInTheDocument();
+
+    for (const format of clubVereContent.formats) {
+      expect(
+        screen.getByRole("heading", { level: 3, name: format.title }),
+      ).toBeInTheDocument();
+    }
+
+    expect(container.querySelector(".ad-hero__formats")).toBeInTheDocument();
+    expect(container.querySelector(".ad-formats")).not.toBeInTheDocument();
+  });
+});
