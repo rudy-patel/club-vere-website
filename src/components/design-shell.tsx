@@ -6,6 +6,7 @@ import { BlueHour } from "@/components/blue-hour";
 import { DesignSwitcher } from "@/components/design-switcher";
 import { InviteClub } from "@/components/invite-club";
 import { SoftFocus } from "@/components/soft-focus";
+import { TheVereEdit } from "@/components/the-vere-edit";
 import { VereAfterDark } from "@/components/vere-after-dark";
 import { clubVereContent } from "@/lib/content";
 import { getInitialDesign, type DesignId } from "@/lib/designs";
@@ -17,6 +18,7 @@ const designs = {
   "vere-after-dark": VereAfterDark,
   "blue-hour": BlueHour,
   "invite-club": InviteClub,
+  "the-vere-edit": TheVereEdit,
 } satisfies Record<DesignId, typeof SoftFocus>;
 
 export function DesignShell() {

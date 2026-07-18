@@ -37,7 +37,7 @@ describe("DesignSwitcher", () => {
     ).toBeInTheDocument();
   });
 
-  it("offers four designs without the removed Neon option", () => {
+  it("offers five designs including the Vere Edit without the removed Neon option", () => {
     render(
       <DesignSwitcher
         activeDesign="soft-focus"
@@ -45,7 +45,10 @@ describe("DesignSwitcher", () => {
       />,
     );
 
-    expect(screen.getAllByRole("button")).toHaveLength(4);
+    expect(screen.getAllByRole("button")).toHaveLength(5);
+    expect(
+      screen.getByRole("button", { name: /05 vere edit/i }),
+    ).toBeInTheDocument();
     expect(screen.queryByRole("button", { name: /neon/i })).not.toBeInTheDocument();
   });
 });

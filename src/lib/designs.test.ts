@@ -7,6 +7,8 @@ describe("design selection", () => {
     for (const design of DESIGN_IDS) {
       expect(isDesignId(design)).toBe(true);
     }
+
+    expect(DESIGN_IDS).toContain("the-vere-edit");
   });
 
   it("rejects unknown persisted values", () => {
@@ -23,5 +25,6 @@ describe("design selection", () => {
   it("restores a valid persisted design", () => {
     expect(getInitialDesign("blue-hour")).toBe("blue-hour");
     expect(getInitialDesign("invite-club")).toBe("invite-club");
+    expect(getInitialDesign("the-vere-edit")).toBe("the-vere-edit");
   });
 });
