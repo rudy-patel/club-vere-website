@@ -36,4 +36,16 @@ describe("DesignSwitcher", () => {
       screen.getByRole("group", { name: /compare landing page designs/i }),
     ).toBeInTheDocument();
   });
+
+  it("offers four designs without the removed Neon option", () => {
+    render(
+      <DesignSwitcher
+        activeDesign="soft-focus"
+        onDesignChange={() => undefined}
+      />,
+    );
+
+    expect(screen.getAllByRole("button")).toHaveLength(4);
+    expect(screen.queryByRole("button", { name: /neon/i })).not.toBeInTheDocument();
+  });
 });

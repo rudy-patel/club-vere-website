@@ -4,7 +4,6 @@ import {
   Cormorant_Garamond,
   Manrope,
   Space_Grotesk,
-  Syne,
 } from "next/font/google";
 
 import "./globals.css";
@@ -35,13 +34,6 @@ const gallery = Space_Grotesk({
   subsets: ["latin"],
   variable: "--font-gallery",
   weight: ["400", "500", "600", "700"],
-});
-
-const signal = Syne({
-  display: "swap",
-  subsets: ["latin"],
-  variable: "--font-signal",
-  weight: ["400", "500", "600", "700", "800"],
 });
 
 const siteUrl =
@@ -94,7 +86,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en">
       <body
-        className={`${manrope.variable} ${editorial.variable} ${condensed.variable} ${gallery.variable} ${signal.variable}`}
+        className={`${manrope.variable} ${editorial.variable} ${condensed.variable} ${gallery.variable}`}
       >
         <a className="skip-link" href="#main-content">
           Skip to content

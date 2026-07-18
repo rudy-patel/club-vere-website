@@ -2,13 +2,12 @@
 
 A fast, responsive marketing site for Club Vere, a Vancouver events community.
 
-The landing page includes five complete visual directions that can be switched live from the floating control:
+The landing page includes four complete visual directions that can be switched live from the floating control:
 
 - **Soft Focus**: quiet editorial photography and generous whitespace
 - **After Dark**: high-contrast poster energy with condensed type
 - **Blue Hour**: Swiss-clean white space with oversized cobalt type
 - **Invite Club**: framed invitation energy with burgundy and periwinkle
-- **Neon Signal**: maximalist color bands and festival-poster punch
 
 The selected direction is saved in local storage, and switching designs preserves the visitor's scroll position.
 
