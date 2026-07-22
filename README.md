@@ -6,7 +6,7 @@ The landing page includes five complete visual directions that can be switched l
 
 - **Soft Focus**: quiet editorial photography and generous whitespace
 - **After Dark**: high-contrast poster energy with condensed type
-- **Blue Hour**: Swiss-clean white space with oversized cobalt type
+- **Good Company**: layered invitations, tactile event ephemera, and genuine Club Vere photography
 - **Invite Club**: framed invitation energy with burgundy and periwinkle
 - **The Vere Edit**: the brand-led synthesis using Vere's official palette, wordmark, and real event photography
 
