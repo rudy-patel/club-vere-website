@@ -9,7 +9,7 @@ const options: ReadonlyArray<{
 }> = [
   { id: "soft-focus", number: "01", label: "Soft Focus" },
   { id: "vere-after-dark", number: "02", label: "After Dark" },
-  { id: "blue-hour", number: "03", label: "Blue Hour" },
+  { id: "good-company", number: "03", label: "Good Company" },
   { id: "invite-club", number: "04", label: "Invite" },
   { id: "the-vere-edit", number: "05", label: "Vere Edit" },
 ];

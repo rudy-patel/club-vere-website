@@ -19,9 +19,11 @@ describe("DesignSwitcher", () => {
       "true",
     );
 
-    fireEvent.click(screen.getByRole("button", { name: /blue hour/i }));
+    fireEvent.click(
+      screen.getByRole("button", { name: /03 good company/i }),
+    );
 
-    expect(onDesignChange).toHaveBeenCalledWith("blue-hour");
+    expect(onDesignChange).toHaveBeenCalledWith("good-company");
   });
 
   it("labels the control for design comparison", () => {
@@ -49,6 +51,12 @@ describe("DesignSwitcher", () => {
     expect(
       screen.getByRole("button", { name: /05 vere edit/i }),
     ).toBeInTheDocument();
+    expect(
+      screen.getByRole("button", { name: /03 good company/i }),
+    ).toBeInTheDocument();
+    expect(
+      screen.queryByRole("button", { name: /blue hour/i }),
+    ).not.toBeInTheDocument();
     expect(screen.queryByRole("button", { name: /neon/i })).not.toBeInTheDocument();
   });
 });
