@@ -72,6 +72,7 @@ export function GoodCompany({ content }: GoodCompanyProps) {
               alt={content.images.details.alt}
               className="cover-image"
               fill
+              loading="eager"
               sizes="(max-width: 767px) 44vw, 18vw"
               src={content.images.details.src}
             />
