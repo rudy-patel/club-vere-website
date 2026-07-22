@@ -8,12 +8,15 @@ describe("design selection", () => {
       expect(isDesignId(design)).toBe(true);
     }
 
+    expect(DESIGN_IDS).toContain("good-company");
     expect(DESIGN_IDS).toContain("the-vere-edit");
+    expect(DESIGN_IDS).not.toContain("blue-hour");
   });
 
   it("rejects unknown persisted values", () => {
     expect(isDesignId("gradient-slop")).toBe(false);
     expect(isDesignId("neon-signal")).toBe(false);
+    expect(isDesignId("blue-hour")).toBe(false);
     expect(isDesignId(null)).toBe(false);
   });
 
@@ -23,8 +26,12 @@ describe("design selection", () => {
   });
 
   it("restores a valid persisted design", () => {
-    expect(getInitialDesign("blue-hour")).toBe("blue-hour");
+    expect(getInitialDesign("good-company")).toBe("good-company");
     expect(getInitialDesign("invite-club")).toBe("invite-club");
     expect(getInitialDesign("the-vere-edit")).toBe("the-vere-edit");
+  });
+
+  it("migrates the legacy Blue Hour selection to Good Company", () => {
+    expect(getInitialDesign("blue-hour")).toBe("good-company");
   });
 });

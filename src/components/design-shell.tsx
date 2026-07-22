@@ -16,7 +16,7 @@ const STORAGE_KEY = "club-vere-design";
 const designs = {
   "soft-focus": SoftFocus,
   "vere-after-dark": VereAfterDark,
-  "blue-hour": BlueHour,
+  "good-company": BlueHour,
   "invite-club": InviteClub,
   "the-vere-edit": TheVereEdit,
 } satisfies Record<DesignId, typeof SoftFocus>;
