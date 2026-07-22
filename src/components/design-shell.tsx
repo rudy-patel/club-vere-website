@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from "react";
 
-import { BlueHour } from "@/components/blue-hour";
 import { DesignSwitcher } from "@/components/design-switcher";
+import { GoodCompany } from "@/components/good-company";
 import { InviteClub } from "@/components/invite-club";
 import { SoftFocus } from "@/components/soft-focus";
 import { TheVereEdit } from "@/components/the-vere-edit";
@@ -16,7 +16,7 @@ const STORAGE_KEY = "club-vere-design";
 const designs = {
   "soft-focus": SoftFocus,
   "vere-after-dark": VereAfterDark,
-  "good-company": BlueHour,
+  "good-company": GoodCompany,
   "invite-club": InviteClub,
   "the-vere-edit": TheVereEdit,
 } satisfies Record<DesignId, typeof SoftFocus>;

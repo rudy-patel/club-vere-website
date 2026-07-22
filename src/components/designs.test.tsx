@@ -2,7 +2,7 @@ import { cleanup, render, screen } from "@testing-library/react";
 import type { ComponentType } from "react";
 import { afterEach, describe, expect, it } from "vitest";
 
-import { BlueHour } from "@/components/blue-hour";
+import { GoodCompany } from "@/components/good-company";
 import { InviteClub } from "@/components/invite-club";
 import { SoftFocus } from "@/components/soft-focus";
 import { TheVereEdit } from "@/components/the-vere-edit";
@@ -14,7 +14,7 @@ afterEach(cleanup);
 const designs: Array<[string, ComponentType<{ content: ClubVereContent }>]> = [
   ["Soft Focus", SoftFocus],
   ["Vere After Dark", VereAfterDark],
-  ["Blue Hour", BlueHour],
+  ["Good Company", GoodCompany],
   ["Invite Club", InviteClub],
   ["The Vere Edit", TheVereEdit],
 ];
@@ -58,5 +58,32 @@ describe("Vere After Dark hero", () => {
 
     expect(container.querySelector(".ad-hero__formats")).toBeInTheDocument();
     expect(container.querySelector(".ad-formats")).not.toBeInTheDocument();
+  });
+});
+
+describe("Good Company composition", () => {
+  it("assembles the shared formats and past event as tactile ephemera", () => {
+    const { container } = render(
+      <GoodCompany content={clubVereContent} />,
+    );
+
+    expect(container.querySelector(".good-company")).toBeInTheDocument();
+    expect(container.querySelector(".gc-hero__stack")).toBeInTheDocument();
+    expect(container.querySelector(".gc-ticker")).toBeInTheDocument();
+    expect(
+      screen.getByRole("heading", {
+        level: 1,
+        name: clubVereContent.heroTitle,
+      }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getAllByText(clubVereContent.pastEvent.date).length,
+    ).toBeGreaterThan(0);
+
+    for (const format of clubVereContent.formats) {
+      expect(
+        screen.getByRole("heading", { level: 3, name: format.title }),
+      ).toBeInTheDocument();
+    }
   });
 });
